@@ -1,0 +1,23 @@
+> let array =[10,-15,2,40,80]
+undefined
+> array.push(1,2,3) - added 1,2,3 at end of array
+8 - 
+> array
+[
+  10, -15, 2, 40,
+  80,   1, 2,  3
+]
+> array.push([10,20,30])
+9
+> array
+[ 10, -15, 2, 40, 80, 1, 2, 3, [ 10, 20, 30 ] ]
+> array[8].map(function(e){return e * 2})
+[ 20, 40, 60 ]
+> array[8].reduce(function(res,e){return res + e},"")
+'102030'
+> array.splice(3,0,100,200) - first argument(3) - index,second argument(0) - how many elements will be delited
+begining from third argument - list being inserted elements
+[] - returns array od being delited elements
+> array
+[ 10, -15, 2, 100, 200, 40, 80, 1, 2, 3, [ 10, 20, 30 ] ]
+>
