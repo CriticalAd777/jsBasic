@@ -1,27 +1,45 @@
-function ulSurround(strings){
-    let newLength = strings.length + 2; // The length for the new array.
-    let outputStrings = new Array(newLength);
-    outputStrings.push("<ul>");
-    for(let i=0;i< strings.length;i++){     // "for" loop used for a more readable and debuggable code
-        // Initialized a new variable (instead of shortening the solution into a single line),  for a more readable and debuggable code
-        let valueToPush = "<li>" + strings[i] + "</li>";
-        outputStrings.push(valueToPush);
-    } 
-    outputStrings.push("</ul>");
-    return outputStrings;
+function minMax (numbers){
+    // Using the "Callback function" instead of "Arrow function" for a more readable code
+    let minMaxArray = numbers.reduce(function(previousResult, value, index) {
+        if(index==0){
+            previousResult[0] = value;
+            previousResult[1] = value;
+        }
+        else{
+            if(value < previousResult[0]){
+                previousResult[0]=value;
+            }
+            if(value > previousResult[1]){
+                previousResult[1]=value;
+            }
+        }
+        return previousResult;
+      }, new Array(2));
+
+      return minMaxArray;
 }
 
-function count(strings, string){
-    let counter = 0;
-    for(let i=0; i < strings.length;i++){
-        if(string==strings[i]){
-            counter++;
-        }
-    }
-    return counter;
+function deleteWithPrefix(strings, prefix){
+    // Not returning in the same line of code for an easier debugging (same for the next examples)
+    let stringsUpdated = strings.filter(current => current.startsWith(prefix)==false);
+    return stringsUpdated;
 }
-let strings1 = ["abc", "lmn", "cd"];
-let ulSurrounding = ulSurround(strings1);
-console.log(ulSurrounding);
-let strings2 = ["abc", "lmn", "cd", "abc", "abc"];
-console.log(count(strings2, "abc"));
+
+function getSortedEvenOdd(numbers){
+    /*  Didn't understand the Array.sort function enough (specifically logic behind "a" and "b" parameters),
+        to get the result by using single calls of Array.splice and Array.sort
+    */
+    let numbersEven = numbers.filter(number => number%2==0).sort((a,b) => a-b );
+    let numbersOdd = numbers.filter(number => number %2!==0).sort((a,b) => b-a);
+    let numbersResult = numbersEven.concat(numbersOdd);
+    return numbersResult;
+}
+
+let arr1 = [1,2,3,4,5];
+console.log(minMax(arr1));
+
+let arr2 = ["abc", "old_abc", "123", "lmn", "old_lmn"];
+console.log(deleteWithPrefix(arr2, "old_"));
+
+let arr3 = [1,6,3,8,5,2,7,4];
+console.log(getSortedEvenOdd(arr3));

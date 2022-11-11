@@ -21,3 +21,6 @@ begining from third argument - list being inserted elements
 > array
 [ 10, -15, 2, 100, 200, 40, 80, 1, 2, 3, [ 10, 20, 30 ] ]
 >
+map reduce splice(changing array возвр массив удаленных элементов) slice(not changing) 
+push(добавить элемент в конец массива ) unshift(в начало)
+arrow functions =>
