@@ -27,7 +27,7 @@ function deleteWithPrefix(strings, prefix){
 
 function getSortedEvenOdd(numbers){
     /*  Didn't understand the Array.sort function enough (specifically logic behind "a" and "b" parameters),
-        to get the result by using single calls of Array.splice and Array.sort
+        & how to get the result by using single calls of Array.splice and Array.sort
     */
     let numbersEven = numbers.filter(number => number%2==0).sort((a,b) => a-b );
     let numbersOdd = numbers.filter(number => number %2!==0).sort((a,b) => b-a);
