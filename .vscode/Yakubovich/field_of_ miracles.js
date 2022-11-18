@@ -25,10 +25,15 @@ let currentTries = INITIAL_TRIES;
 
 let currentQuestion;
 let currentAnswer;
+let currentTry;
+let closedCellsCounter;
+let answerCellsElements;
 
 startGame();
 
 function startGame() {
+    currentTry = INITIAL_TRIES;
+    
     let index = Math.floor(Math.random() * QUESTIONS_ANSWERS.length);
 
     currentQuestion = QUESTIONS_ANSWERS[index][0];
@@ -36,9 +41,10 @@ function startGame() {
 
     questionElement.innerHTML = currentQuestion;
     const arrCurrentAnswer = Array.from(currentAnswer);
+    closedCellsCounter = currentAnswer.length;
 
     answerElement.innerHTML = buildCellsByAnswer(arrCurrentAnswer);
-    const answerCellsElements = document.querySelectorAll(".letter-guess");
+    answerCellsElements = document.querySelectorAll(".letter-guess");
 
     arrCurrentAnswer.forEach((l,i) => {
         answerCellsElements[i].innerHTML = l;
@@ -46,11 +52,6 @@ function startGame() {
 
      
 
-    // answerCellsElements[0].innerHTML = 'n';
-    // answerCellsElements[1].innerHTML = 'i';
-    // answerCellsElements[2].innerHTML = 'g';
-    // answerCellsElements[3].innerHTML = 'e';
-    // answerCellsElements[4].innerHTML = 'r';
 
     // word = words[index];
     // trials = INITIAL_TRIALS
