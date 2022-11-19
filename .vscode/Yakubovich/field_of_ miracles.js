@@ -1,23 +1,16 @@
 'use strict';
-// document.getElementsByClassName('spinWheel')[0].addEventListener("click",function(e){
-//     e.target.style.transform = 'rotate('+Math.random()*1000 +'rad)';
-
-//     return false;
-// });
-
-// 'rgb(0, 0, 0)'
 const HIDDEN_BACKGROUND_COLOR = "black";
 const FOUND_BACKGROUND_COLOR = "white";
 const INITIAL_TRIES = 6;
 const QUESTIONS_ANSWERS = [
     [
-        "Vopros 1", "otvetRaz"
+        "Vopros", "otvet"
     ],
     [
-        "Vopros 2", "otvetZwei"
+        "Sheila", "tshuva"
     ],
     [
-        "Vopros 3", "otvetShalosh"
+        "Question", "answer"
     ]
 ];
 const answerElement = document.querySelector(".word-guess");
@@ -33,12 +26,9 @@ let currentAnswer;
 let currentTry;
 let closedCellsCounter;
 let answerCellsElements;
-
 let lastUsedQuestionAnswerIndex = -1;
 
 startGame();
-
-
 
 function startGame() {
     isGameOver = false;
