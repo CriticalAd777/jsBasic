@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <p class="current-answer"></p>
     <input type="text" onchange="onChange(event)">
-    <section class="word-guess">
-    </section>
+    <p class="current-answer"></p>
+    <section class="word-guess"></section>
     <p class="guess-trials"></p>
-
+    <p class="game-over-message"></p>
+    <button id="play-again" onclick="startGame()">Play Again</button>
     <!-- <div class="arrow">
         <img src="arrow.png">
     </div>
