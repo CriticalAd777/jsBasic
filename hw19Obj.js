@@ -49,7 +49,6 @@ function getEmployeesBySalary(employees, minSalary, maxSalary){
         console.log("Bad input");
         return null;
    }
-
     let specificEmployees = employees
         .filter(employee => employee.salary > minSalary && employee.salary < maxSalary)
         .sort((a,b) => a.salary-b.salary);
