@@ -1,14 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/library.css">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles/form.css">
 </head>
+
 <body>
-    <script src="src/library.js"></script>
-    <script src="src/main.js"></script>
+    <div class="buttons-menu">
+        <button onclick="showSection(0)" class="btn-menu">Add Book</button>
+        <button onclick="showSection(1)" class="btn-menu">Show All Books</button>
+        <button onclick="showSection(2)" class="btn-menu">Show Books by Pages</button>
+        <button onclick="showSection(3)" class="btn-menu">Show Books by Author</button>
+    </div>
+    <section id="add-employee" hidden>
+        <header class="form-title">
+            Book Form
+        </header>
+        <form id="employee_form"  class="form-class">
+            <div class="two-inputs">
+                <input type="text" name="book_title" required placeholder="Enter book title">
+                <input type="text" name="author" placeholder="Enter book author" required>
+            </div>
+            <div class="date-label">
+                <label>Enter Publishing date</label>
+                <input type="date" name="publishDate" required id="date_input">
+
+            </div>
+            <p id="date_error" class="error"></p>
+            <div class="two-inputs">
+                <select name="genre" required>
+                    <option value hidden selected disabled>
+                        --Select Genre--
+                    </option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Biography">Biography</option>
+                </select>
+                <input type="number" name="pages" placeholder="Enter pages" id="salary_input" required>
+
+            </div>
+            <p id="salary_error" class="error"></p>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+
+
+
+        </form>
+    </section>
+    <section id="show-all-employees" hidden>
+        <ul class="employees-list" id="employees-all">
+
+        </ul>
+    </section>
+    <section id="show-employees-salary" hidden>
+        <form id="salary-form" class="form-class" >
+            <div class="two-inputs">
+                <input type="number" id="salaryFrom" name="salaryFrom" placeholder="Enter pages 'From'"  required>
+                <input type="number" id="salaryTo" name="salaryTo" placeholder="Enter pages 'To'"  required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <p id="salary_form_error" class="error center"></p>
+        <ul class="employees-list" id="employees-salary">
+
+        </ul>
+    </section>
+
+    <section id="show-books-by-author" hidden>
+        <form id="author-form" class="form-class">
+            <div class="two-inputs">
+                <input type="text" id="author" name="author" placeholder="Enter authors name" required>
+            </div>
+            <div>
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <ul class="employees-list" id="books-author"></ul>
+
+    </section>
+    
+    <script src="src/main.js" type="module"></script>
 </body>
+
 </html>
